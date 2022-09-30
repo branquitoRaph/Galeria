@@ -2,6 +2,8 @@ package branco.raphael.galeria;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -23,7 +25,12 @@ public class MainAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        //Inflar a view no mainActivity
+        LayoutInflater inflater = LayoutInflater.from(mainActivity);
+        //Criando a view e a inflando
+        View v = inflater.inflate(R.layout.list_item, parent, false);
+        //Retornado a view para o ViewHolder
+        return new MeuViewHolder(v);
     }
 
     @Override
@@ -42,7 +49,6 @@ public class MainAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getItemCount() {return photos.size();
     }
 }
