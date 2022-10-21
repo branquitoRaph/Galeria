@@ -26,7 +26,7 @@ public class MainAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //Inflar a view no mainActivity
-        LayoutInflater inflater = LayoutInflater.from(mainActivity);
+        LayoutInflater inflater = LayoutInflater.from(this.mainActivity);
         //Criando a view e a inflando
         View v = inflater.inflate(R.layout.list_item, parent, false);
         //Retornado a view para o ViewHolder
@@ -46,6 +46,7 @@ public class MainAdapter extends RecyclerView.Adapter {
                 mainActivity.startPhotoActivity(photos.get(position));
             }
         });
+
     }
 
     @Override
