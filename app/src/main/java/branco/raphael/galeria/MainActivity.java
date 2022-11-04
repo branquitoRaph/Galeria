@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         //Setando a toolbar (pegando)
         Toolbar toolbar = findViewById(R.id.tbMain);
         setSupportActionBar(toolbar);
+
         File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File[] files = dir.listFiles();
         for(int i = 0; i < files.length; i++) {
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         List<String> permissions = new ArrayList<>();
         permissions.add(Manifest.permission.CAMERA);
 
-            checkForPermissions(permissions);
+        checkForPermissions(permissions);
 
     }
     //Método de inflar o menu
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main_activity_tb, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
